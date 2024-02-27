@@ -2,18 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@layer base {
+  .ellipse {
+    top: -27rem;
+    left: -20rem;
+    height: 150%;
+    width: 200%;
+    border-radius: 100%;
+    background-color: var(--color-primary);
+  }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+:root {
+  --foreground-rgb: 51, 51, 51;
+  --color-primary: #4cad73;
+  --color-primary-light: #53b97c;
+  --color-accent: #333333;
+  --color-accent-light: #F2F2F2;
 }
 
 body {
@@ -30,4 +35,50 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.bg-primary {
+  background-color: var(--color-primary-light);
+}
+
+.public-header{
+  width: 100%;
+  height: auto;
+  position: relative;
+ 
+}
+.public-header::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: calc((100vh - 250px) - 20vh);
+  background-color: var(--color-primary);
+  clip-path: ellipse(110% 90% at 40% 0%);
+}
+
+.public-header .container{
+  width: 100%;
+  height: calc((100vh - 250px)-30vh);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+}
+
+.public-header .images{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.public-header .character{
+  height: 30vh;
+}
+
+.public-header .logo{
+  height: 20px;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
 }
