@@ -18,11 +18,12 @@
   --color-primary: #4cad73;
   --color-primary-light: #53b97c;
   --color-accent: #333333;
-  --color-accent-light: #F2F2F2;
+  --color-accent-light: #f2f2f2;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
+  max-width: 414px;
   background: linear-gradient(
       to bottom,
       transparent,
@@ -41,13 +42,12 @@ body {
   background-color: var(--color-primary-light);
 }
 
-.public-header{
+.public-header {
   width: 100%;
   height: auto;
   position: relative;
- 
 }
-.public-header::before{
+.public-header::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -56,9 +56,27 @@ body {
   clip-path: ellipse(110% 90% at 40% 0%);
 }
 
-.public-header .container{
+.public-header-auth::before {
+  content: "";
+  position: absolute;
   width: 100%;
-  height: calc((100vh - 250px)-30vh);
+  height: calc((100vh - 250px) - 20vh);
+  background-color: var(--color-primary);
+  clip-path: ellipse(110% 90% at 40% 0%);
+}
+
+.public-header .container {
+  width: 100%;
+  height: calc((100vh - 250px)-50vh);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+}
+.public-header-auth .container {
+  width: 100%;
+  height: calc((100vh - 150px)-30vh);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -66,19 +84,47 @@ body {
   position: absolute;
 }
 
-.public-header .images{
+.public-header .images {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
 
-.public-header .character{
-  height: 30vh;
+.public-header .character {
+  height: 40svh;
+}
+.public-header-auth .character {
+  height: 30svh;
 }
 
-.public-header .logo{
-  height: 20px;
-  margin-top: 5vh;
-  margin-bottom: 5vh;
+.public-header .logo {
+  height: 30px;
+  margin-top: 8vh;
+  margin-bottom: 4vh;
+}
+
+.public-header-auth .navigation {
+  height: 40px;
+  margin-top: 2vh;
+  margin-bottom: 0vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigation img {
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  top: 24px;
+  left: 12px;
+}
+
+.mb-1{
+  margin-bottom: 0px;
+}
+
+.flex-half{
+  flex: 0.5
 }

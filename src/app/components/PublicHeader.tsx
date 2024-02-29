@@ -1,7 +1,11 @@
 import React, { PropsWithChildren } from "react";
 
-const PublicHeader = ({ children }: PropsWithChildren) => (
-  <section className="public-header">
+interface Props {
+  auth?: boolean;
+}
+
+const PublicHeader = ({ auth, children }: PropsWithChildren<Props>) => (
+  <section className={`public-header${auth ? "-auth" : ""}`}>
     <div className=" container">{children}</div>
   </section>
 );
