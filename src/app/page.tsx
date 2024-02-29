@@ -17,14 +17,14 @@ export default function Home() {
           />
         </div>
         <div className="images">
-          <img
+          <Image
             className="character"
             width={200}
             height={10}
             src="/assets/character_woman.svg"
             alt="character_woman"
             />
-          <img
+          <Image
             className="character"
             width={200}
             height={10}
