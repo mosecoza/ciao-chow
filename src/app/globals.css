@@ -124,3 +124,7 @@ body {
 .mb-1{
   margin-bottom: 0px;
 }
+
+.flex-half{
+  flex: 0.5
+}
